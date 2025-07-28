@@ -21,6 +21,7 @@ function SearchForm({ onSearch }) {
     <section className="search-form">
       <form className="search-form__form" onSubmit={handleSubmit}>
         <input
+          id="search-form__input"
           type="text"
           className="search-form__input"
           placeholder="Enter topic"
