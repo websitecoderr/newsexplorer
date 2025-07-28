@@ -1,0 +1,62 @@
+.news-results {
+  padding: 48px 16px;
+  background-color: #f9f9f9;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.news-results__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  top: 25px;
+}
+
+.news-results__more {
+  display: block;
+  margin: 32px auto 0;
+  padding: 12px 24px;
+  font-size: 50px;
+  font-weight: 500;
+  background-color: #2f71e5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.news-results__more:hover {
+  background-color: #347eff;
+}
+
+.app__error {
+  color: #d93025;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 24px;
+}
+
+.app__no-results {
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .news-results__title {
+    font-size: 32px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 24px;
+  }
+
+  .news-results__more {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,16 @@
+.modal__switch {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 12px;
+  color: #555;
+}
+
+.modal__switch-button {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}

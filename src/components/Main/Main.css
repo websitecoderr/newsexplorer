@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  width: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__hero {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
+    url("../images/hero-section.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.main__hero-content {
+  max-width: 100%;
+}
+
+.main__hero-title {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 80px;
+  letter-spacing: 0;
+  color: #ffffff;
+  max-width: 700px;
+  height: auto;
+  margin: 15px;
+  text-align: center;
+  opacity: 1;
+  text-align: left;
+  position: relative;
+  left: 20px;
+}
+
+.main__hero-subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #ffffff;
+  max-width: 608px;
+  height: auto;
+  margin: 20px auto 0;
+  text-align: center;
+  opacity: 1;
+  position: relative;
+  left: -35px;
+  top: 10px;
+}
+
+.main__about {
+  background: white;
+  padding: 1rem 2rem;
+  flex: 1 0 auto;
+}
+
+.main__about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.main__author-image {
+  width: 100%;
+  height: 500px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  background-image: url("../images/1000132344.jpg");
+  background-repeat: no-repeat;
+  position: relative;
+  top: 50px;
+}
+
+.main__about-text {
+  padding-left: 40px;
+}
+
+.main__about-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  color: #333;
+}
+
+.main__about-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.main__about-description:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1279px) {
+  .main__hero {
+    height: 70vh;
+  }
+
+  .main__hero-title {
+    font-size: 40px;
+  }
+
+  .main__hero-subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .main__about {
+    padding: 40px 20px;
+  }
+
+  .main__about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .main__about-text {
+    padding-left: 0;
+  }
+
+  .main__about-title {
+    font-size: 32px;
+  }
+
+  .main__author-image {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 465px) {
+  .main__hero {
+    height: 80vh;
+  }
+
+  .main__hero-title {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: start;
+    margin-left: 1rem;
+  }
+
+  .main__hero-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .main__about-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .main__about-title {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .main__about-description {
+    font-size: 14px;
+    color: black;
+    text-align: justify;
+  }
+
+  .main__author-image {
+    width: 300px;
+    height: 300px;
+  }
+}
