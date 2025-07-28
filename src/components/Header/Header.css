@@ -23,9 +23,18 @@
 }
 
 .header.saved-page {
-  background-color: white;
   box-shadow: none;
   color: black;
+}
+
+.header.saved-page .header__user-button::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/logoutsave.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .header.saved-page .header__link,
@@ -187,9 +196,9 @@
 }
 
 .header__user-button::after {
-  content: ""; 
+  content: "";
   display: inline-block;
-  background-image: url('../images/logout.svg');
+  background-image: url("../images/logout.svg");
   background-repeat: no-repeat;
   background-size: 16px 16px;
   width: 16px;
@@ -198,8 +207,6 @@
   vertical-align: middle;
   transition: background-image 0.3s ease;
 }
-
-
 
 @media (max-width: 600px) {
   .header__hamburger,

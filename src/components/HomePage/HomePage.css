@@ -31,11 +31,7 @@
   margin: 0 auto 32px;
 }
 
-.search-form__input:focus,
-.search-form__button:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
+
 
 @media (max-width: 768px) {
   .homepage__title {
