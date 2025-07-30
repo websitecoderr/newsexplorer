@@ -5,14 +5,14 @@ import githubIcon from "../images/githubIcon.svg";
 
 function Footer(isSavedPage) {
   return (
-    <footer className={`footer ${isSavedPage ? "saved-page" : ""} `}>
+    <footer className={`footer ${isSavedPage ? "saved-page" : ""}`}>
       <div className="footer__container">
         <p className="footer__copyright">
           © 2025 Supersite, Powered by News API
         </p>
         <div className="footer__right">
           <nav className="footer__nav">
-            <a href="/" className="footer__link">
+            <a href="/" className="footer__link footer__home-link">
               Home
             </a>
             <a
@@ -47,3 +47,4 @@ function Footer(isSavedPage) {
 }
 
 export default Footer;
+

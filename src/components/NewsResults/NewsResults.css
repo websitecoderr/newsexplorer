@@ -136,7 +136,18 @@
   }
 
   .news-results__show-more {
-    padding: 10px 30px;
-    font-size: 12px;
+    padding: -20px 20px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    opacity: 1;
+    background-color: #333;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    top: 30px;
   }
 }

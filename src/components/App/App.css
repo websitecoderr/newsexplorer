@@ -1,8 +1,7 @@
 .news-results {
   padding: 48px 16px;
   background-color: #f9f9f9;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: var(--font-main);
 }
 
 .news-results__list {

@@ -1,7 +1,7 @@
 .saved-articles {
   min-height: 100vh;
   background-color: #fff;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-main);
   display: flex;
   flex-direction: column;
 }

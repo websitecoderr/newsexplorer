@@ -2,27 +2,87 @@
   --color-primary: #2f71e5;
   --color-hover: #347eff;
   --color-disabled: #e6e8eb;
+  --color-success: #4caf50;
+  --color-error: #f44336;
+  --color-warning: #ff9800;
   --color-text: #1a1a1a;
   --color-muted: #b6bcbf;
-  --font-main: "Inter", sans-serif;
-}
+  --color-bg: #ffffff;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --font-main: "Roboto Slab", sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 20px;
+
+  --spacing-unit: 8px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 12px;
+  --box-shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 body {
   font-family: var(--font-main);
-  background-color: #f5f6f7;
+  font-size: var(--font-size-base);
   color: var(--color-text);
-  line-height: 1.6;
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
+.button {
+  display: inline-block;
+  padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: var(--font-size-base);
   border: none;
-  outline: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  box-shadow: var(--box-shadow-sm);
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--color-hover);
+}
+
+.button:disabled {
+  background-color: var(--color-disabled);
+  cursor: not-allowed;
+}
+
+.alert {
+  padding: calc(var(--spacing-unit) * 2);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  margin: calc(var(--spacing-unit) * 2) 0;
+}
+
+.alert-success {
+  background-color: var(--color-success);
+  color: #fff;
+}
+
+.alert-error {
+  background-color: var(--color-error);
+  color: #fff;
+}
+
+.alert-warning {
+  background-color: var(--color-warning);
+  color: #fff;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.mt-lg {
+  margin-top: calc(var(--spacing-unit) * 4);
+}
+
+.px-lg {
+  padding-left: calc(var(--spacing-unit) * 4);
+  padding-right: calc(var(--spacing-unit) * 4);
 }

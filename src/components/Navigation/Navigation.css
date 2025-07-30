@@ -5,7 +5,7 @@
   padding: 16px 24px;
   background-color: transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-main);
 }
 
 .nav__logo {
