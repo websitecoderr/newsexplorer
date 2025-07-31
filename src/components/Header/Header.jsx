@@ -15,11 +15,13 @@ function Header({
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = !isMenuOpen ? "hidden" : "auto";
+    document.body.classList.toggle("menu-open", !isMenuOpen);
   };
 
   useEffect(() => {
     return () => {
       document.body.style.overflow = "auto";
+      document.body.classList.remove("menu-open");
     };
   }, []);
 
@@ -33,6 +35,7 @@ function Header({
         <Link to="/" className="header__logo" aria-label="Go to homepage">
           NewsExplorer
         </Link>
+
         <button
           className={`header__hamburger ${isMenuOpen ? "hidden" : ""}`}
           onClick={toggleMenu}
@@ -40,6 +43,7 @@ function Header({
         >
           ☰
         </button>
+
         <button
           className={`header__close ${!isMenuOpen ? "hidden" : ""}`}
           onClick={toggleMenu}
@@ -47,6 +51,7 @@ function Header({
         >
           ×
         </button>
+
         <nav className="header__nav">
           {!isLoggedIn ? (
             <ul className={`header__links ${isMenuOpen ? "active" : ""}`}>
@@ -107,6 +112,12 @@ function Header({
           )}
         </nav>
       </div>
+
+      <div className="header__divider" aria-hidden="true"></div>
+
+      {isMenuOpen && (
+        <div className="header__overlay" onClick={toggleMenu}></div>
+      )}
     </header>
   );
 }

@@ -13,15 +13,6 @@
   transition: background-color 0.3s ease;
 }
 
-.header .header__link,
-.header .header__logo,
-.header .header__button,
-.header .header__user-button {
-  color: white;
-  border-color: white;
-  cursor: pointer;
-}
-
 .header.saved-page {
   box-shadow: none;
   color: black;
@@ -212,19 +203,73 @@
   .header__hamburger,
   .header__close {
     display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    opacity: 1;
+    top: -5px;
+    left: 50px;
   }
+
+  .hamburger.open span:nth-child(2) {
+    width: 100%;
+    border-bottom: 2px solid white;
+  }
+
+  .header__divider {
+    height: 1px;
+    width: 100%;
+    backdrop-filter: blur(2px);
+    margin-top: 4px;
+  }
+
+  .header__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    cursor: pointer;
+  }
+
+  body.menu-open {
+    background-color: black;
+  }
+
   .active {
     background-color: black;
+  }
+
+  .header.active .header__logo {
+    color: white;
+    opacity: 1;
+    width: max-content;
+    padding-bottom: 4px;
+  }
+
+  .header.active .header__logo::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: -50px;
+    width: 150%;
+    height: 2px;
+    box-shadow: 0px -1px 0px 0px #ffffff33 inset;
+    transform: scaleX(1);
   }
 
   .header__links,
   .header__nav--logged-in {
     display: none;
     position: fixed;
-    top: 60px;
+    top: 95px;
     left: 0;
     width: 100%;
-    max-height: 50vh;
+    max-height: 250vh;
     background-color: rgba(0, 0, 0, 0.95);
     flex-direction: column;
     justify-content: center;
@@ -284,6 +329,53 @@
   }
   .header__user-button::after {
     margin-left: 8px;
+  }
+
+  .header .header__user-button {
+    color: white;
+    cursor: pointer;
+    width: 288px;
+    height: 56px;
+    border-radius: 100px;
+    position: relative;
+    top: 0px;
+    left: -10px;
+    opacity: 1;
+  }
+
+  .header .header__link {
+    position: relative;
+    top: -52px;
+    left: -160px;
+    opacity: 1;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 56px;
+    letter-spacing: 0px;
+    color: #ffffff;
+  }
+
+  .header .header__button {
+    position: absolute;
+    width: 288px;
+    height: 56px;
+    top: 80px;
+    left: 50px;
+    opacity: 1;
+    border-radius: 100px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .header .header__button:hover {
+    background-color: #ffffff;
+    color: #20232a;
   }
 
   .signin:hover,

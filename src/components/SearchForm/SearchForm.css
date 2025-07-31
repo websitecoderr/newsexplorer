@@ -84,6 +84,8 @@
     padding-inline: 16px;
     font-size: 16px;
     box-sizing: border-box;
+    position: relative;
+    left: 12px;
   }
 
   .search-form__button {
