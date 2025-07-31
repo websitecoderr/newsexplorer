@@ -1,3 +1,5 @@
+@import url(./vendor/fonts.css);
+
 :root {
   --color-primary: #2f71e5;
   --color-hover: #347eff;

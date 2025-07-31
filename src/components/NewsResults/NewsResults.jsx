@@ -28,11 +28,14 @@ function NewsResults({
   if (error) {
     return (
       <section className="news-results news-results--centered">
-        <img src="src\components\images\not-found_v1.svg" alt="" />
+        <img
+          src="src/components/images/not-found_v1.svg"
+          alt="Not Found Illustration"
+        />
         <h3 className="news-results__status_title">Nothing Found</h3>
         <p className="news-results__status news-results__status--error">
-          Sorry, but nothing matched <br />
-          your search terms.
+          Sorry, but nothing matched{" "}
+          <span className="line-break">your search terms.</span>
         </p>
       </section>
     );

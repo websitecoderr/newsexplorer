@@ -27,7 +27,7 @@ function HomePage({
           onSave={onSave}
           onUnsave={onUnsave}
           visibleCards={visibleCards}
-          onSearch={onSearch} // Pass to Main for SearchForm
+          onSearch={onSearch}
         />
       </div>
     </div>

@@ -104,6 +104,10 @@
 .news-results__show-more:hover {
   background-color: var(--color-hover);
 }
+.line-break {
+  display: block;
+  margin-top: 4px;
+}
 
 @media (max-width: 768px) {
   .news-results__list {
@@ -149,5 +153,10 @@
     cursor: pointer;
     position: relative;
     top: 30px;
+  }
+
+  .line-break {
+    display: block;
+    margin-top: 4px;
   }
 }

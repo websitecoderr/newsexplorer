@@ -1,6 +1,6 @@
 .homepage {
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
   background-color: #ffffff;
   color: var(--color-text);
 }
@@ -23,8 +23,6 @@
   max-width: 600px;
   margin: 0 auto 32px;
 }
-
-
 
 @media (max-width: 768px) {
   .homepage__title {
