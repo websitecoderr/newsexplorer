@@ -208,7 +208,7 @@
     position: relative;
     opacity: 1;
     top: -5px;
-    left: 50px;
+    left: 70px;
   }
 
   .hamburger.open span:nth-child(2) {
@@ -346,7 +346,7 @@
   .header .header__link {
     position: relative;
     top: -52px;
-    left: -160px;
+    right: 255px;
     opacity: 1;
     font-family: Roboto;
     font-weight: 500;

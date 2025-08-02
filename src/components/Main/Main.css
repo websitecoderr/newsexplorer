@@ -45,6 +45,7 @@ body {
   margin: 0 auto 15px;
   text-align: left;
   opacity: 1;
+  margin: 60px;
 }
 
 .main__hero-subtitle {
@@ -54,10 +55,11 @@ body {
   line-height: 24px;
   color: #ffffff;
   max-width: 600px;
-  margin: 0 auto;
   text-align: left;
   opacity: 1;
-  left: -37px;
+  position: relative;
+  right: -10px;
+  margin: 50px;
 }
 
 .main__about {
