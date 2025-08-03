@@ -118,6 +118,23 @@ function App() {
     setVisibleCards((prev) => Math.min(prev + 3, articles.length));
   };
 
+  const handleSaveArticle = (article) => {
+    const isAlreadySaved = savedArticles.some(
+      (saved) => saved.url === article.url
+    );
+
+    if (!isAlreadySaved) {
+      setSavedArticles((prev) => [...prev, article]);
+    }
+  };
+
+  const handleUnsaveArticle = (article) => {
+    const updatedList = savedArticles.filter(
+      (saved) => saved.url !== article.url
+    );
+    setSavedArticles(updatedList);
+  };
+
   return (
     <div className="app">
       <Header
@@ -140,10 +157,11 @@ function App() {
               onShowMore={handleShowMore}
               showMoreVisible={visibleCards < articles.length}
               isLoggedIn={isLoggedIn}
-              onSave={() => {}}
-              onUnsave={() => {}}
+              onSave={handleSaveArticle}
+              onUnsave={handleUnsaveArticle}
               visibleCards={visibleCards}
               onSearch={handleSearch}
+              savedArticles={savedArticles}
             />
           }
         />

@@ -15,6 +15,7 @@ function Main({
   onUnsave,
   visibleCards,
   onSearch,
+  savedArticles,
 }) {
   return (
     <div className="main">
@@ -42,6 +43,7 @@ function Main({
           visibleCards={visibleCards}
           onShowMore={onShowMore}
           showMoreVisible={showMoreVisible}
+          savedArticles={savedArticles}
         />
       )}
 

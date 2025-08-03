@@ -114,6 +114,7 @@ body {
 
 @media (max-width: 1279px) {
   .main__hero {
+    padding: 120px 0 40px 0;
   }
 
   .main__about {

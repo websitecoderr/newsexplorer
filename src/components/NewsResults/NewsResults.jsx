@@ -12,6 +12,7 @@ function NewsResults({
   visibleCards,
   onShowMore,
   showMoreVisible,
+  savedArticles,
 }) {
   if (!isLoading && !error && articles.length === 0) {
     return null;
@@ -53,7 +54,7 @@ function NewsResults({
           <NewsCard
             key={index}
             article={article}
-            isSaved={false}
+            isSaved={savedArticles.some((saved) => saved.url === article.url)}
             onSave={onSave}
             onUnsave={onUnsave}
             isLoggedIn={isLoggedIn}

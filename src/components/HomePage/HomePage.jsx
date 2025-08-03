@@ -13,6 +13,7 @@ function HomePage({
   onUnsave,
   visibleCards,
   onSearch,
+  savedArticles,
 }) {
   return (
     <div className="homepage">
@@ -28,6 +29,7 @@ function HomePage({
           onUnsave={onUnsave}
           visibleCards={visibleCards}
           onSearch={onSearch}
+          savedArticles={savedArticles}
         />
       </div>
     </div>
