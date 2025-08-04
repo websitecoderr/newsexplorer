@@ -3,14 +3,14 @@ import "./Footer.css";
 import facebookIcon from "../../images/facebookIcon.svg";
 import githubIcon from "../../images/githubIcon.svg";
 
-function Footer(isSavedPage) {
+function Footer({ isSavedPage }) {
   return (
     <footer className={`footer ${isSavedPage ? "saved-page" : ""}`}>
       <div className="footer__container">
-        <p className="footer__copyright">
+         <p className="footer__copyright">
           © 2025 Supersite, Powered by News API
         </p>
-        <div className="footer__right">
+        <div className="footer__top">
           <nav className="footer__nav">
             <a href="/" className="footer__link footer__home-link">
               Home
@@ -41,9 +41,11 @@ function Footer(isSavedPage) {
             </a>
           </div>
         </div>
+       
       </div>
     </footer>
   );
 }
 
 export default Footer;
+
