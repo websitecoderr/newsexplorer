@@ -3,6 +3,7 @@ import "./Main.css";
 import SearchForm from "../SearchForm/SearchForm";
 import Preloader from "../Preloader/Preloader";
 import NewsResults from "../NewsResults/NewsResults";
+import Image from "../../images/1000132344.jpg";
 
 function Main({
   articles,
@@ -49,11 +50,7 @@ function Main({
 
       <section className="main__about">
         <div className="main__about-content">
-          <img
-            src="src\components\images\1000132344.jpg"
-            alt=""
-            className="main__author-image"
-          />
+          <img src={Image} alt="" className="main__author-image" />
           <div className="main__about-text">
             <h2 className="main__about-title">About the author</h2>
             <p className="main__about-description">
