@@ -97,7 +97,7 @@ function Header({
                     : ""
                 } ${isSavedPage ? "saved-page" : ""} ${
                   location.pathname === "/" ? "header__link--inactive" : ""
-                }`}
+                } ${isMenuOpen ? "header__link--menu-open" : ""}`}
               >
                 Saved articles
               </Link>

@@ -29,6 +29,7 @@
   position: relative;
   top: 80px;
   left: -70px;
+  padding-left: 30px; 
 }
 
 .search-form__input::placeholder {
