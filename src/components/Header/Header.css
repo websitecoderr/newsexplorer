@@ -336,13 +336,13 @@
     height: 56px;
     border-radius: 100px;
     opacity: 1;
-    margin-right: 235px;
+    margin-right: 205px;
   }
 
   .header .header__link {
     position: relative;
     top: -18px;
-    right: 270px;
+    right: 250px;
     opacity: 1;
     font-family: Roboto;
     font-weight: 500;
