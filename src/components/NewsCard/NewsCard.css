@@ -81,7 +81,7 @@
   right: 12px;
   width: 40px;
   height: 40px;
-  background: url("../images/bookmarksignin.svg") no-repeat center;
+  background: url("../../images/bookmarksignin.svg") no-repeat center;
   background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid #e2e8f0;
   border-radius: 50%;
@@ -91,11 +91,11 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .news-card__save-button_logged-in {
-  background-image: url("../images/bookmarkdefault.jpg");
+  background-image: url("../../images/bookmarkdefault.jpg");
 }
 
 .news-card__save-button_saved {
-  background-image: url("../images/bookmarksaved.svg");
+  background-image: url("../../images/bookmarksaved.svg");
   background-color: #bfdbfe;
 }
 

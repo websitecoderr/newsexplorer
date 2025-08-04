@@ -21,7 +21,7 @@ body {
 
 .main__hero {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
-    url("/newsexplorer/src/components/images/hero-section.jpg");
+    url("../../images/hero-section.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -58,6 +58,7 @@ body {
   text-align: left;
   opacity: 1;
   position: relative;
+  top: -10px;
   right: -10px;
   margin: 50px;
 }
@@ -84,7 +85,7 @@ body {
   object-fit: cover;
   margin: 0 auto;
   display: block;
-  background-image: url("../images/1000132344.jpg");
+  background-image: url("../../images/1000132344.jpg");
   background-repeat: no-repeat;
   position: relative;
   top: 50px;
@@ -150,7 +151,8 @@ body {
     font-size: 36px;
     line-height: 40px;
     margin: 0 auto 10px;
-    left: 25px;
+    position: relative;
+    left: 10px;
   }
 
   .main__hero-subtitle {

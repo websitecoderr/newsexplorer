@@ -147,7 +147,7 @@
   right: 16px;
   width: 40px;
   height: 40px;
-  background: url("../images/trash.svg") no-repeat center;
+  background: url("../../images/trash.svg") no-repeat center;
   background-size: 24px;
   background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid #e2e8f0;

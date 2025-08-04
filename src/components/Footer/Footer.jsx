@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import facebookIcon from "../images/facebookIcon.svg";
-import githubIcon from "../images/githubIcon.svg";
+import facebookIcon from "../../images/facebookIcon.svg";
+import githubIcon from "../../images/githubIcon.svg";
 
 function Footer(isSavedPage) {
   return (

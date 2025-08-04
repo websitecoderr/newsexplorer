@@ -22,7 +22,7 @@
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-image: url("../images/logoutsave.svg");
+  background-image: url("../../images/logoutsave.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -188,7 +188,7 @@
 .header__user-button::after {
   content: "";
   display: inline-block;
-  background-image: url("../images/logout.svg");
+  background-image: url("../../images/logout.svg");
   background-repeat: no-repeat;
   background-size: 16px 16px;
   width: 16px;
@@ -207,7 +207,7 @@
     position: relative;
     opacity: 1;
     top: -5px;
-    left: 70px;
+    left: 50px;
   }
 
   .hamburger.open span:nth-child(2) {

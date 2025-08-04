@@ -1,6 +1,7 @@
 import React from "react";
 import "./NewsResults.css";
 import NewsCard from "../NewsCard/NewsCard";
+import notFoundImage from '../../images/not-found_v1.svg'
 
 function NewsResults({
   articles = [],
@@ -30,7 +31,7 @@ function NewsResults({
     return (
       <section className="news-results news-results--centered">
         <img
-          src="src/components/images/not-found_v1.svg"
+          src={notFoundImage}
           alt="Not Found Illustration"
         />
         <h3 className="news-results__status_title">Nothing Found</h3>
