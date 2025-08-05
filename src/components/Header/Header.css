@@ -82,7 +82,7 @@
   align-items: center;
   margin: 0;
   padding: 0;
-  margin-right: 175px;
+  margin-right: -175px;
 }
 
 .header__link {
@@ -342,7 +342,7 @@
   .header .header__link {
     position: relative;
     top: -30px;
-    right: 237px;
+    right: 220px;
     opacity: 1;
     font-family: Roboto;
     font-weight: 500;
