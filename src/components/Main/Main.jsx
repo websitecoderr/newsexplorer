@@ -5,6 +5,7 @@ import Preloader from "../Preloader/Preloader";
 import NewsResults from "../NewsResults/NewsResults";
 import Image from "../../images/1000132344.jpg";
 
+
 function Main({
   articles,
   isLoading,

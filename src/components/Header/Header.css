@@ -9,6 +9,8 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
   transition: background-color 0.3s ease;
+  padding-bottom: 15px;
+ 
 }
 
 .header.saved-page {
@@ -40,7 +42,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin: 15px;
+  margin: 0 auto;
 }
 
 .header__logo {

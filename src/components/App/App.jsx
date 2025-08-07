@@ -11,6 +11,7 @@ import { register, login, checkToken, logout } from "../../utils/auth.mock";
 import { getSavedArticles } from "../../utils/savedarticles.mock";
 import { fetchNewsArticles } from "../../utils/newsApi.js";
 import { useLocation } from "react-router-dom";
+import SuccessModal from "../SuccessModal/SuccessModal";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,10 +24,12 @@ function App() {
   const location = useLocation();
   const isSavedArticlesPage = location.pathname === "/saved-articles";
 
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [registerError, setRegisterError] = useState("");
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [loginError, setLoginError] = useState("");
+  const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
+  const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
+
   useEffect(() => {
     checkToken()
       .then((userData) => {
@@ -70,7 +73,6 @@ function App() {
       })
       .finally(() => setIsLoading(false));
   };
-
   const handleRegister = ({ email, password, name }) => {
     setIsLoading(true);
     return register({ email, password, name })
@@ -79,6 +81,7 @@ function App() {
         setIsLoggedIn(true);
         setRegisterError("");
         setIsRegisterOpen(false);
+        setSuccessModalOpen(true);
         console.log("Registration successful:", response.user);
       })
       .catch((err) => {
@@ -183,14 +186,20 @@ function App() {
       <Footer isSavedPage={isSavedArticlesPage} />
 
       <RegisterModal
-        isOpen={isRegisterOpen}
-        onClose={() => setIsRegisterOpen(false)}
+        isOpen={isRegisterModalOpen}
+        onClose={() => setRegisterModalOpen(false)}
+        onSubmit={handleRegister}
         onRegister={handleRegister}
         onSwitchToLogin={() => {
           setIsRegisterOpen(false);
           setIsLoginOpen(true);
         }}
         errorMessage={registerError}
+      />
+      <SuccessModal
+        isOpen={isSuccessModalOpen}
+        onClose={() => setSuccessModalOpen(false)}
+        message="Registration successful! Welcome aboard."
       />
 
       <LoginModal
