@@ -17,8 +17,7 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
       <main className="saved-articles__main">
         <section className="saved-articles__intro-section">
           <div className="saved-articles__container">
-           <div className="saved-articles__breadcrumb">Saved articles</div>
-
+            <div className="saved-articles__breadcrumb">Saved articles</div>
 
             <h2 className="saved-articles__title">
               {currentUser}, you have {articles.length} saved article

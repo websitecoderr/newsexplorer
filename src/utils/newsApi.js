@@ -4,7 +4,7 @@ const PROD_URL = "https://nomoreparties.co/news/v2/everything";
 const BASE_URL = window.location.hostname === "localhost" ? DEV_URL : PROD_URL;
 
 const API_KEY =
-  import.meta.env.VITE_NEWS_API_KEY || "0ae22c0a6e884ff99fdc04c8959d80e3"; // Use .env or fallback
+  import.meta.env.VITE_NEWS_API_KEY || "0ae22c0a6e884ff99fdc04c8959d80e3";
 
 const PAGE_SIZE = 100;
 
@@ -22,8 +22,8 @@ const getDateString = (offsetDays = 0) => {
  * @returns {Promise<Array>}
  */
 export const fetchNewsArticles = async (query) => {
-  const from = getDateString(14); // Use 14 days ago to ensure past data
-  const to = getDateString(7); // Use 7 days ago
+  const from = getDateString(14);
+  const to = getDateString(7);
 
   const url = `${BASE_URL}?q=${encodeURIComponent(
     query

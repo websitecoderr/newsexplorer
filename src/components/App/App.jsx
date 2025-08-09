@@ -16,7 +16,7 @@ import SuccessModal from "../SuccessModal/SuccessModal";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [savedArticles, setSavedArticles] = useState([]);
-  const [currentUser, setCurrentUser] = useState("Alex");
+  const [currentUser, setCurrentUser] = useState("Elisa");
   const [articles, setArticles] = useState([]);
   const [visibleCards, setVisibleCards] = useState(3);
   const [isLoading, setIsLoading] = useState(false);
@@ -68,7 +68,8 @@ function App() {
       .then(() => {
         setIsLoggedIn(false);
         setSavedArticles([]);
-        setCurrentUser("Alex");
+        setCurrentUser(null);
+
         console.log("Logout successful");
       })
       .finally(() => setIsLoading(false));
@@ -80,7 +81,7 @@ function App() {
         setCurrentUser(response.user.name);
         setIsLoggedIn(true);
         setRegisterError("");
-        setIsRegisterOpen(false);
+        setRegisterModalOpen(false);
         setSuccessModalOpen(true);
         console.log("Registration successful:", response.user);
       })
@@ -138,10 +139,14 @@ function App() {
     setSavedArticles(updatedList);
   };
 
+  function handleOpenLoginModal() {
+    setIsLoginOpen(true);
+  }
+
   return (
     <div className="app">
       <Header
-        isLoggedIn={isLoggedIn}
+        isLoggedIn={!!currentUser}
         onLoginClick={() => setIsLoginOpen(true)}
         onLogoutClick={handleLogout}
         currentUser={currentUser}
@@ -149,40 +154,44 @@ function App() {
         isLoading={isLoading}
         isSavedPage={isSavedArticlesPage}
       />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-              articles={articles.slice(0, visibleCards)}
-              isLoading={isLoading}
-              error={error}
-              onShowMore={handleShowMore}
-              showMoreVisible={visibleCards < articles.length}
-              isLoggedIn={isLoggedIn}
-              onSave={handleSaveArticle}
-              onUnsave={handleUnsaveArticle}
-              visibleCards={visibleCards}
-              onSearch={handleSearch}
-              savedArticles={savedArticles}
-            />
-          }
-        />
-        <Route
-          path="/saved-articles"
-          element={
-            <SavedArticles
-              articles={savedArticles}
-              onDelete={(index) =>
-                setSavedArticles(savedArticles.filter((_, i) => i !== index))
-              }
-              currentUser={currentUser}
-              onHomeClick={() => {}}
-              onSignOut={handleLogout}
-            />
-          }
-        />
-      </Routes>
+
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                articles={articles.slice(0, visibleCards)}
+                isLoading={isLoading}
+                error={error}
+                onShowMore={handleShowMore}
+                showMoreVisible={visibleCards < articles.length}
+                isLoggedIn={!!currentUser}
+                onSave={handleSaveArticle}
+                onUnsave={handleUnsaveArticle}
+                visibleCards={visibleCards}
+                onSearch={handleSearch}
+                savedArticles={savedArticles}
+              />
+            }
+          />
+          <Route
+            path="/saved-articles"
+            element={
+              <SavedArticles
+                articles={savedArticles}
+                onDelete={(index) =>
+                  setSavedArticles(savedArticles.filter((_, i) => i !== index))
+                }
+                currentUser={currentUser}
+                onHomeClick={() => {}}
+                onSignOut={handleLogout}
+              />
+            }
+          />
+        </Routes>
+      </main>
+
       <Footer isSavedPage={isSavedArticlesPage} />
 
       <RegisterModal
@@ -191,14 +200,16 @@ function App() {
         onSubmit={handleRegister}
         onRegister={handleRegister}
         onSwitchToLogin={() => {
-          setIsRegisterOpen(false);
+          setRegisterModalOpen(false);
           setIsLoginOpen(true);
         }}
         errorMessage={registerError}
       />
+
       <SuccessModal
         isOpen={isSuccessModalOpen}
         onClose={() => setSuccessModalOpen(false)}
+        openLoginModal={handleOpenLoginModal}
         message="Registration successful! Welcome aboard."
       />
 
@@ -208,7 +219,7 @@ function App() {
         onLogin={handleLogin}
         onSwitchToRegister={() => {
           setIsLoginOpen(false);
-          setIsRegisterOpen(true);
+          setRegisterModalOpen(true);
         }}
         errorMessage={loginError}
       />

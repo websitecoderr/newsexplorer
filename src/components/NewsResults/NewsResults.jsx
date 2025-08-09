@@ -1,7 +1,7 @@
 import React from "react";
 import "./NewsResults.css";
 import NewsCard from "../NewsCard/NewsCard";
-import notFoundImage from '../../images/not-found_v1.svg'
+import notFoundImage from "../../images/not-found_v1.svg";
 
 function NewsResults({
   articles = [],
@@ -30,10 +30,7 @@ function NewsResults({
   if (error) {
     return (
       <section className="news-results news-results--centered">
-        <img
-          src={notFoundImage}
-          alt="Not Found Illustration"
-        />
+        <img src={notFoundImage} alt="Not Found Illustration" />
         <h3 className="news-results__status_title">Nothing Found</h3>
         <p className="news-results__status news-results__status--error">
           Sorry, but nothing matched{" "}
@@ -50,18 +47,19 @@ function NewsResults({
       {displayedArticles.length > 0 && (
         <h2 className="news-results__title">Search Results</h2>
       )}
-      <div className="news-results__list">
+      <ul className="news-results__list">
         {displayedArticles.map((article, index) => (
-          <NewsCard
-            key={index}
-            article={article}
-            isSaved={savedArticles.some((saved) => saved.url === article.url)}
-            onSave={onSave}
-            onUnsave={onUnsave}
-            isLoggedIn={isLoggedIn}
-          />
+          <li key={index} className="news-results__item">
+            <NewsCard
+              article={article}
+              isSaved={savedArticles.some((saved) => saved.url === article.url)}
+              onSave={onSave}
+              onUnsave={onUnsave}
+              isLoggedIn={isLoggedIn}
+            />
+          </li>
         ))}
-      </div>
+      </ul>
       {showMoreVisible && (
         <button className="news-results__show-more" onClick={onShowMore}>
           Show more

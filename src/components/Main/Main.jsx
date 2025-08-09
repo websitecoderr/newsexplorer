@@ -5,7 +5,6 @@ import Preloader from "../Preloader/Preloader";
 import NewsResults from "../NewsResults/NewsResults";
 import Image from "../../images/1000132344.jpg";
 
-
 function Main({
   articles,
   isLoading,
@@ -20,7 +19,7 @@ function Main({
   savedArticles,
 }) {
   return (
-    <div className="main">
+    <main className="main">
       <section className="main__hero">
         <div className="main__hero-content">
           <h1 className="main__hero-title">What's going on in the world?</h1>
@@ -50,8 +49,12 @@ function Main({
       )}
 
       <section className="main__about">
-        <div className="main__about-content">
-          <img src={Image} alt="" className="main__author-image" />
+        <article className="main__about-content">
+          <img
+            src={Image}
+            alt="Portrait of the author"
+            className="main__author-image"
+          />
           <div className="main__about-text">
             <h2 className="main__about-title">About the author</h2>
             <p className="main__about-description">
@@ -64,9 +67,9 @@ function Main({
               learned there, and how you can help potential customers.
             </p>
           </div>
-        </div>
+        </article>
       </section>
-    </div>
+    </main>
   );
 }
 

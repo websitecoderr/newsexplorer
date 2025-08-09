@@ -7,7 +7,7 @@ function SuccessModal({ isOpen, onClose, openLoginModal }) {
 
   return (
     <div className="success-modal" role="dialog" aria-modal="true">
-      <div className="success-modal__content">
+      <section className="success-modal__content">
         <button
           className="success-modal__close"
           onClick={onClose}
@@ -24,17 +24,16 @@ function SuccessModal({ isOpen, onClose, openLoginModal }) {
             to="/"
             onClick={() => {
               onClose();
-              openLoginModal(); 
+              openLoginModal();
             }}
           >
             Sign in
           </Link>
           .
         </p>
-      </div>
+      </section>
     </div>
   );
 }
 
 export default SuccessModal;
-

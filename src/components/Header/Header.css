@@ -1,3 +1,4 @@
+/* ========== Header Base Styles ========== */
 .header {
   position: absolute;
   top: 0;
@@ -9,42 +10,26 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
   transition: background-color 0.3s ease;
-  padding-bottom: 15px;
- 
+  padding: 15px 2rem;
+  background-color: transparent;
 }
 
 .header.saved-page {
   box-shadow: none;
   color: black;
-}
-
-.header.saved-page .header__user-button::after {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-image: url("../../images/logoutsave.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.header.saved-page .header__link,
-.header.saved-page .header__logo,
-.header.saved-page .header__button,
-.header.saved-page .header__user-button {
-  color: black;
-  border-color: black;
+  background-color: white;
 }
 
 .header__container {
   max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin: 0 auto;
 }
 
+/* ========== Logo ========== */
 .header__logo {
   font-size: 24px;
   font-weight: 600;
@@ -53,27 +38,15 @@
   z-index: 1001;
 }
 
+.header.saved-page .header__logo {
+  color: black;
+}
+
+/* ========== Navigation ========== */
 .header__nav {
   display: flex;
   align-items: center;
-}
-
-.header__hamburger,
-.header__close {
-  font-size: 24px;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-  z-index: 1002;
-  display: none;
-}
-
-.header__hamburger.hidden,
-.header__close.hidden {
-  display: none !important;
+  gap: 20px;
 }
 
 .header__links,
@@ -84,7 +57,6 @@
   align-items: center;
   margin: 0;
   padding: 0;
-  margin-right: -175px;
 }
 
 .header__link {
@@ -92,7 +64,12 @@
   color: white;
   font-weight: 500;
   transition: color 0.3s ease;
-  position: relative;
+}
+
+.header__link:hover,
+.header__link:focus {
+  color: var(--color-primary, #007bff);
+  outline: none;
 }
 
 .header__link--inactive {
@@ -103,44 +80,31 @@
 
 .header__link--inactive:hover {
   color: #007bff;
-  text-decoration: none;
   opacity: 0.85;
-}
-
-.header__link:hover,
-.header__link:focus {
-  color: var(--color-primary, #007bff);
-  outline: none;
-}
-
-.header__link--active {
-  position: relative;
 }
 
 .header__link--active::after {
   content: "";
-  position: absolute;
-  bottom: -26px;
-  left: -7px;
+  display: block;
+  margin-top: 8px;
   width: 60px;
   height: 3px;
   background-color: #ffffff;
-  transition: background-color 0.3s ease;
   border-radius: 24px;
 }
 
+.header.saved-page .header__link,
+.header.saved-page .header__button,
+.header.saved-page .header__user-button {
+  color: black;
+  border-color: black;
+}
+
 .header.saved-page .header__link--active::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -4px;
-  top: 39px;
-  left: -12px;
-  width: 135px;
-  height: 2px;
   background-color: black;
 }
 
+/* ========== Buttons ========== */
 .header__button {
   background: none;
   border: none;
@@ -151,26 +115,16 @@
   transition: color 0.3s ease;
 }
 
-.signin {
-  border: 1px solid white;
-  padding: 8px 42px;
-  border-radius: 20px;
-  margin-left: 1rem;
-}
-
-.header__button:hover,
-.header__button:focus {
-  color: var(--color-primary, #007bff);
-  outline: none;
-}
-
 .header__button:focus-visible {
   outline: 2px solid var(--color-primary, #007bff);
   border-radius: 2px;
 }
 
-.header__nav--logged-in {
-  gap: 40px;
+.signin {
+  border: 1px solid white;
+  padding: 8px 42px;
+  border-radius: 20px;
+  margin-left: 1rem;
 }
 
 .header__user-button {
@@ -196,70 +150,47 @@
   width: 16px;
   height: 16px;
   margin-left: 8px;
-  vertical-align: middle;
   transition: background-image 0.3s ease;
 }
 
+.header.saved-page .header__user-button::after {
+  background-image: url("../../images/logoutsave.svg");
+}
+
+/* ========== Hamburger Menu ========== */
+.header__hamburger,
+.header__close {
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.header__hamburger.hidden,
+.header__close.hidden {
+  display: none !important;
+}
+
+/* ========== Mobile Styles ========== */
 @media (max-width: 600px) {
+  .header {
+    padding: 15px 1rem;
+  }
+
   .header__hamburger,
   .header__close {
     display: block;
-    width: 24px;
-    height: 24px;
-    position: relative;
-    opacity: 1;
-    top: -5px;
-    left: 90px;
-  }
-
-  .hamburger.open span:nth-child(2) {
-    width: 100%;
-    border-bottom: 2px solid white;
-  }
-
-  .header__divider {
-    height: 1px;
-    width: 100%;
-    backdrop-filter: blur(2px);
-    margin-top: 4px;
-  }
-
-  .header__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.8);
-    cursor: pointer;
-  }
-
-  body.menu-open {
-    background-color: black;
-  }
-
-  .active {
-    background-color: black;
-  }
-
-  .header.active .header__logo {
-    color: white;
-    opacity: 1;
-    width: max-content;
-    padding-bottom: 4px;
-  }
-
-  .header.active .header__logo::after {
-    content: "";
     position: absolute;
-    top: 50px;
-    bottom: 0;
-    left: -50px;
-    width: 150%;
-    height: 2px;
-    box-shadow: 0px -1px 0px 0px #ffffff33 inset;
-    transform: scaleX(1);
+    top: 15px;
+    right: 20px;
+    z-index: 1002;
+  }
+
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .header__links,
@@ -269,7 +200,7 @@
     top: 70px;
     left: 0;
     width: 100%;
-    max-height: 250vh;
+    height: calc(100vh - 70px);
     background-color: rgba(0, 0, 0, 0.95);
     flex-direction: column;
     justify-content: center;
@@ -289,23 +220,11 @@
   }
 
   .header__link {
-    display: block;
-    padding: 10px 0;
     font-size: 18px;
     color: white;
     text-align: center;
     width: 100%;
-    text-decoration: none;
-    background: none;
-    border: none;
-    border-radius: 0;
-    transition: none;
-  }
-
-  .header__link:hover,
-  .header__link:focus {
-    background: none;
-    outline: none;
+    padding: 10px 0;
   }
 
   .header__link--active::after {
@@ -316,69 +235,38 @@
   .header__user-button {
     width: 100%;
     font-size: 18px;
-    box-sizing: border-box;
     text-align: center;
-    background: none;
     border: 2px solid white;
     border-radius: 20px;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0;
+    padding: 12px 24px;
   }
+
   .header__user-button::after {
     margin-left: 8px;
   }
 
   .header.active .header__user-button {
-    color: white;
-    cursor: pointer;
     width: 288px;
     height: 56px;
     border-radius: 100px;
-    opacity: 1;
-    margin-right: 153px;
+    margin: 0 auto;
   }
 
-  .header .header__link {
-    position: relative;
-    top: -30px;
-    right: 220px;
-    opacity: 1;
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 56px;
-    letter-spacing: 0px;
-    color: #ffffff;
-  }
-
-  .header .header__button {
-    position: absolute;
+  .header__button {
     width: 288px;
     height: 56px;
-    top: 80px;
-    left: 45px;
-    opacity: 1;
     border-radius: 100px;
     border: 1px solid #ffffff;
     background-color: transparent;
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin: 20px auto;
+    display: block;
   }
 
-  .header.active .header__link--menu-open {
-    color: #ffffff;
-    font-weight: bold;
-    margin-top: -50px;
-    margin-left: 70px;
-  }
-
-  .header .header__button:hover {
+  .header__button:hover {
     background-color: #ffffff;
     color: #20232a;
   }
