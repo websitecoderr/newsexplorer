@@ -92,7 +92,7 @@
 
   .search-form__button {
     width: 160px;
-    height: 56px;
+    height: 57px;
     border-radius: 100px;
     background-color: #2f71e5;
     color: #ffffff;
@@ -106,8 +106,8 @@
     padding: 0 24px;
     box-sizing: border-box;
     transition: background-color 0.3s ease;
-    margin-left: 350px;
-    margin-top: -180px;
+    margin-left: 370px;
+    margin-top: -77px;
   }
 
   .search-form__button:hover {

@@ -41,14 +41,15 @@ body {
   color: #ffffff;
   margin-bottom: 15px;
   text-align: left;
-  max-width: 800px;
-  width: 608px;
-  height: 128px;
+  max-width: 535px;
+  width: 100%;
+  height: auto;
   opacity: 1;
   font-weight: 400;
   font-size: 60px;
   line-height: 64px;
-  letter-spacing: 0px;
+  letter-spacing: 0;
+  margin-left: -5px;
 }
 
 .main__hero-subtitle {
@@ -58,7 +59,7 @@ body {
   line-height: 24px;
   color: #ffffff;
   margin-top: 30px;
-  padding-left: 4px;
+  padding-left: -10px;
   text-align: left;
   opacity: 1;
 }
@@ -67,6 +68,7 @@ body {
   background: white;
   padding: 2rem;
   flex: 1 0 auto;
+  margin-bottom: 2rem;
 }
 
 .main__about-content {
@@ -74,12 +76,21 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  gap: 56px;
 }
 
 .main__about-text {
-  padding-left: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  color: #1a1b22;
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  opacity: 1;
 }
 
 .main__about-title {
@@ -99,10 +110,9 @@ body {
 .main__about-description:last-child {
   margin-bottom: 0;
 }
-
 .main__author-image {
-  width: 232px;
-  height: 232px;
+  width: 464px;
+  height: 464px;
   border-radius: 1000px;
   object-fit: cover;
   margin: 50px auto 135px;
@@ -136,6 +146,7 @@ body {
     line-height: 40px;
     letter-spacing: 0px;
     color: #ffffff;
+    margin-left: 85px;
   }
 
   .main__hero-subtitle {
@@ -146,6 +157,7 @@ body {
     letter-spacing: normal;
     color: #ffffff;
     margin-bottom: 24px;
+    margin-left: 90px;
   }
 
   .main__about {
@@ -194,9 +206,18 @@ body {
   }
 
   .main__hero-title {
+    margin: 0 auto 10px;
+    width: 285px;
+    height: 80px;
+    opacity: 1;
+    position: relative;
+    top: 5%;
+    left: -5px;
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
     font-size: 36px;
     line-height: 40px;
-    margin: 0 auto 10px;
+    color: #ffffff;
   }
 
   .main__hero-subtitle {
@@ -225,5 +246,13 @@ body {
     font-size: 14px;
     color: black;
     text-align: justify;
+  }
+}
+
+@media (max-width: 400px) {
+  .main__hero {
+    padding: 72px 2rem 40px;
+    align-items: center;
+    text-align: center;
   }
 }

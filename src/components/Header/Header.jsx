@@ -53,18 +53,43 @@ function Header({
         </button>
 
         <nav className="header__nav">
-          {!isLoggedIn ? (
-            <ul className={`header__links ${isMenuOpen ? "active" : ""}`}>
-              <li>
-                <Link
-                  to="/"
-                  className={`header__link ${
-                    location.pathname === "/" ? "header__link--active" : ""
-                  }`}
-                >
-                  Home
-                </Link>
-              </li>
+          <ul className={`header__links ${isMenuOpen ? "active" : ""}`}>
+            <li>
+              <Link
+                to="/"
+                className={`header__link ${
+                  location.pathname === "/" ? "header__link--active" : ""
+                }`}
+              >
+                Home
+              </Link>
+            </li>
+
+            {isLoggedIn ? (
+              <>
+                <li>
+                  <Link
+                    to="/saved-articles"
+                    className={`header__link ${
+                      location.pathname === "/saved-articles"
+                        ? "header__link--saved header__link--active"
+                        : "header__link--inactive"
+                    } ${isMenuOpen ? "header__link--menu-open" : ""}`}
+                  >
+                    Saved articles
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    className="header__user-button"
+                    onClick={onLogoutClick}
+                    aria-label="Log out"
+                  >
+                    {currentUser}
+                  </button>
+                </li>
+              </>
+            ) : (
               <li>
                 <button
                   className={`header__button signin ${
@@ -76,44 +101,10 @@ function Header({
                   Sign in
                 </button>
               </li>
-            </ul>
-          ) : (
-            <div
-              className={`header__nav--logged-in ${isMenuOpen ? "active" : ""}`}
-            >
-              <Link
-                to="/"
-                className={`header__link ${
-                  location.pathname === "/" ? "header__link--active" : ""
-                }`}
-              >
-                Home
-              </Link>
-              <Link
-                to="/saved-articles"
-                className={`header__link ${
-                  location.pathname === "/saved-articles"
-                    ? "header__link--active"
-                    : ""
-                } ${isSavedPage ? "saved-page" : ""} ${
-                  location.pathname === "/" ? "header__link--inactive" : ""
-                } ${isMenuOpen ? "header__link--menu-open" : ""}`}
-              >
-                Saved articles
-              </Link>
-              <button
-                className="header__user-button"
-                onClick={onLogoutClick}
-                aria-label="Log out"
-              >
-                {currentUser}
-              </button>
-            </div>
-          )}
+            )}
+          </ul>
         </nav>
       </div>
-
-      <div className="header__divider" aria-hidden="true"></div>
 
       {isMenuOpen && (
         <div className="header__overlay" onClick={toggleMenu}></div>

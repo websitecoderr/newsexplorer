@@ -7,10 +7,10 @@ function Footer({ isSavedPage }) {
   return (
     <footer className={`footer ${isSavedPage ? "saved-page" : ""}`}>
       <div className="footer__container">
-         <p className="footer__copyright">
-          © 2025 Supersite, Powered by News API
-        </p>
         <div className="footer__top">
+          <p className="footer__copyright">
+            © 2025 Supersite, Powered by News API
+          </p>
           <nav className="footer__nav">
             <a href="/" className="footer__link footer__home-link">
               Home
@@ -41,11 +41,9 @@ function Footer({ isSavedPage }) {
             </a>
           </div>
         </div>
-       
       </div>
     </footer>
   );
 }
 
 export default Footer;
-
