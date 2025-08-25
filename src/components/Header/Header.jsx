@@ -59,7 +59,7 @@ function Header({
                 to="/"
                 className={`header__link ${
                   location.pathname === "/" ? "header__link--active" : ""
-                }`}
+                } ${isMenuOpen ? "header__link--home" : ""}`}
               >
                 Home
               </Link>

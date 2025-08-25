@@ -147,16 +147,16 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .modal {
     background-color: #fff;
     padding: 32px;
     border-radius: 24px;
-    width: 312px;
-    max-width: 330px;
+    width: 375px;
+    max-width: 500px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     animation: slideIn 0.3s ease-out;
-    margin-right: -10px;
-    margin-top: -187px;
+    margin-right: -28px;
+    margin-top: -250px;
   }
 }

@@ -127,6 +127,7 @@ body {
     padding: 120px 2rem 40px;
     align-items: center;
     text-align: center;
+    margin-right: -12px;
   }
 
   .main__hero-content {
