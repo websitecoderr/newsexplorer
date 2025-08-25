@@ -169,13 +169,20 @@
 .header__user-button::after {
   content: "";
   display: inline-block;
-  background-image: url("../../images/logout.svg");
   background-repeat: no-repeat;
   background-size: 16px 16px;
   width: 16px;
   height: 16px;
   margin-left: 8px;
   transition: background-image 0.3s ease;
+}
+
+.header__user-button--home::after {
+  background-image: url("../../images/logout.svg");
+}
+
+.header__user-button--saved::after {
+  background-image: url("../../images/logout2.svg");
 }
 
 .header__hamburger.hidden,

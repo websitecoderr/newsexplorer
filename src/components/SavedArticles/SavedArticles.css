@@ -312,7 +312,7 @@
     padding: 32px 1rem;
     margin: 0 auto;
     text-align: left;
-    margin-left: -38px;
+    margin-left: -47px;
   }
 
   .saved-articles__keywords strong {
@@ -331,7 +331,7 @@
     text-align: center;
     opacity: 1;
     margin-top: -30px;
-    margin-left: -28px;
+    margin-left: -35px;
     text-align: left;
   }
 
@@ -347,11 +347,11 @@
     opacity: 1;
     position: relative;
     top: -50px;
-    right: 120px;
+    right: 125px;
   }
 
   .saved-articles__list-section {
-    margin-left: -20px;
+    margin-left: -29px;
   }
 
   .saved-articles__image {
