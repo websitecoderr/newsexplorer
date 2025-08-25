@@ -156,7 +156,8 @@
   .news-results__title {
     margin: 24px 1rem;
     font-size: 36px;
-    text-align: center;
+    text-align: left;
+    margin-left: -10px;
   }
 
   .news-results__status--title {
