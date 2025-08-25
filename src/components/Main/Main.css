@@ -213,7 +213,7 @@ body {
     opacity: 1;
     position: relative;
     top: 5%;
-    left: -5px;
+    left: -20px;
     font-family: "Roboto Slab", serif;
     font-weight: 400;
     font-size: 36px;
@@ -227,7 +227,7 @@ body {
     margin: 0 auto 30px;
     word-break: break-word;
     hyphens: auto;
-    padding-left: 0;
+    margin-left: -8px;
   }
 
   .main__about-content {
@@ -248,9 +248,7 @@ body {
     color: black;
     text-align: justify;
   }
-}
 
-@media (max-width: 400px) {
   .main__hero {
     padding: 72px 2rem 40px;
     align-items: center;

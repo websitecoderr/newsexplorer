@@ -14,6 +14,7 @@
 .saved-articles__list-section {
   background-color: #f5f6f8;
   padding: 40px 0 80px;
+  margin-left: -20px;
 }
 
 .saved-articles__container {
@@ -311,7 +312,7 @@
     padding: 32px 1rem;
     margin: 0 auto;
     text-align: left;
-    padding-left: 2px;
+    margin-left: -38px;
   }
 
   .saved-articles__keywords strong {
@@ -330,7 +331,7 @@
     text-align: center;
     opacity: 1;
     margin-top: -30px;
-    margin-left: -5px;
+    margin-left: -28px;
     text-align: left;
   }
 
@@ -346,7 +347,11 @@
     opacity: 1;
     position: relative;
     top: -50px;
-    right: 85px;
+    right: 120px;
+  }
+
+  .saved-articles__list-section {
+    margin-left: -20px;
   }
 
   .saved-articles__image {
