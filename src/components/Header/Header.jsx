@@ -35,7 +35,7 @@ function Header({
       >
         <div className="header__container">
           <Link to="/" className="header__logo" aria-label="Go to homepage">
-            NewsExplorer
+            <h1 className="header__title">NewsExplorer</h1>
           </Link>
 
           <button
@@ -123,3 +123,4 @@ function Header({
 }
 
 export default Header;
+

@@ -8,7 +8,7 @@ import SavedArticles from "../SavedArticles/SavedArticles.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import { register, login, checkToken, logout } from "../../utils/auth.mock";
-import { getSavedArticles } from "../../utils/savedarticles.mock";
+import { getSavedArticles } from "../../utils/savedarticles.mock.js";
 import { fetchNewsArticles } from "../../utils/newsApi.js";
 import { useLocation } from "react-router-dom";
 import SuccessModal from "../SuccessModal/SuccessModal";

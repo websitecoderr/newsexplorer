@@ -29,10 +29,13 @@
 }
 
 .saved-articles__breadcrumb {
-  font-size: 20px;
+  font-size: 16px;
   color: #999;
-  margin-bottom: 16px;
-  margin-left: 100px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: none;
+  position: relative;
+  left: 100px;
 }
 
 .saved-articles__title {
@@ -348,6 +351,7 @@
     position: relative;
     top: -50px;
     right: 125px;
+    white-space: nowrap;
   }
 
   .saved-articles__list-section {

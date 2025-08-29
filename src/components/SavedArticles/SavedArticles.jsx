@@ -42,8 +42,8 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
               </p>
             ) : (
               <ul className="saved-articles__list">
-                {articles.map((article, index) => (
-                  <li key={index} className="saved-articles__item">
+                {articles.map((article) => (
+                  <li key={article._id || article.id} className="saved-articles__item">
                     <div className="saved-articles__image-container">
                       <a
                         href={article.url}
@@ -53,8 +53,8 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
                       >
                         <img
                           src={
-                            article.urlToimage ||
-                            "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            article.urlToImage ||
+                            "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=500&q=80"
                           }
                           alt={article.title}
                           className="saved-articles__image"
@@ -68,7 +68,7 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
                         className="saved-articles__bookmark saved-articles__bookmark--saved"
                         onClick={(e) => {
                           e.preventDefault();
-                          onDelete(index);
+                          onDelete(article._id || article.id);
                         }}
                         aria-label="Remove from saved"
                       />
@@ -109,3 +109,10 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
 }
 
 export default SavedArticles;
+
+
+
+
+
+
+
