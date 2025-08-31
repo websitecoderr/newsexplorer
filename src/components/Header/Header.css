@@ -17,7 +17,7 @@
 }
 
 .header__container {
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -31,24 +31,25 @@
   color: white;
   text-decoration: none;
   z-index: 1001;
-  margin-right: 420px;
-  padding-bottom: -50px;
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+  padding-bottom: 0;
 }
 
 .header__title {
-  position: relative;
-  width: 200px;
-  height: 24px;
-  top: 10px;
-  left: 104px;
-  opacity: 1;
   font-family: "Roboto Slab", serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0;
-  vertical-align: middle;
   color: white;
+  padding-left: 2px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto;
 }
 
 .header__logo::after {
@@ -56,12 +57,8 @@
   position: absolute;
   bottom: 35px;
   left: -165px;
-  width: 1500px;
+  width: 100%;
   height: 10px;
-}
-
-.header.saved-page .header__logo {
-  color: black;
 }
 
 .header__nav {
@@ -70,19 +67,22 @@
   gap: 20px;
 }
 
-.header.saved-page .header__link,
-.header.saved-page .header__logo,
-.header.saved-page .header__button,
-.header.saved-page .header__user-button {
+.header.saved-page .header__link {
   color: black;
   margin-top: 20px;
-  margin-right: 38px;
   white-space: nowrap;
+  padding: 0 20px;
+  margin-left: 34px;
+}
+
+.header.saved-page .header__title {
+  color: black;
 }
 
 .header:not(.saved-page) .header__user-button {
   border: 1px solid white;
   color: white;
+  margin-left: 64px;
 }
 
 .header.saved-page {
@@ -103,11 +103,9 @@
 .header__nav--logged-in {
   list-style: none;
   display: flex;
-  gap: 20px;
   align-items: center;
   margin: 0;
   padding: 15px;
-  margin-right: -10px;
   margin-top: 2px;
 }
 
@@ -125,7 +123,7 @@
 .header.saved-page .header__link--active::after {
   content: "";
   position: absolute;
-  top: 50px;
+  top: 40px;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
@@ -136,16 +134,20 @@
   opacity: 1;
 }
 
+.header__link--active {
+  position: relative;
+}
+
 .header__link--active::after {
   content: "";
-  border-bottom: 1px solid white;
-  display: block;
-  width: 80px;
-  height: 3px;
-  opacity: 1;
   position: absolute;
-  top: 50px;
-  left: -8px;
+  bottom: -28px;
+  left: -15px;
+  width: 70px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  opacity: 1;
 }
 
 .header.saved-page .header__user-button::after {
@@ -191,7 +193,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: -87px;
+  margin-left: 34px;
 }
 
 .header__user-button::after {
@@ -217,13 +219,13 @@
 .header__close.hidden {
   display: none !important;
 }
+
 .header__link {
-  position: relative;
   text-decoration: none;
   color: white;
   font-weight: 500;
   transition: color 0.3s ease;
-  margin-left: -250px;
+  white-space: nowrap;
 }
 
 .header__hamburger,
@@ -240,7 +242,7 @@
   color: #b6bcbf;
   cursor: default;
   opacity: 0.7;
-  margin-left: -200px;
+  margin-left: 64px;
   white-space: nowrap;
 }
 
@@ -261,10 +263,10 @@
   .header__link--active::after {
     content: "";
     position: absolute;
-    top: 100%;
+    top: 42px;
     left: -8px;
     width: 60px;
-    height: 25px;
+    height: 3px;
   }
 
   .header.saved-page .header__link,
@@ -272,15 +274,13 @@
   .header.saved-page .header__button,
   .header.saved-page .header__user-button {
     color: black;
-    margin-left: -37px;
   }
 
   .header__title {
     position: relative;
-    width: 200px;
     height: 24.8px;
     top: -5px;
-    left: 80px;
+    left: 38px;
     opacity: 1;
     font-family: "Roboto Slab", serif;
     font-weight: 700;

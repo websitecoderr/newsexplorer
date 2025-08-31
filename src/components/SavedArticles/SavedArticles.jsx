@@ -19,10 +19,10 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
           <div className="saved-articles__container">
             <div className="saved-articles__breadcrumb">Saved articles</div>
 
-            <h2 className="saved-articles__title">
+            <h1 className="saved-articles__title">
               {currentUser}, you have {articles.length} saved article
               {articles.length !== 1 ? "s" : ""}
-            </h2>
+            </h1>
 
             {keywords.length > 0 && (
               <p className="saved-articles__keywords">
