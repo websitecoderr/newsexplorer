@@ -3,14 +3,16 @@ import "./SavedArticles.css";
 
 function SavedArticles({ articles = [], onDelete, currentUser }) {
   const getKeywords = () => {
-    const keywords = articles.flatMap((article) =>
-      article.keyword ? [article.keyword] : []
-    );
-    const uniqueKeywords = [...new Set(keywords)].slice(0, 3);
-    return uniqueKeywords;
+    const keywords = articles.map((a) => a.keyword).filter(Boolean);
+    return [...new Set(keywords)];
   };
 
   const keywords = getKeywords();
+  const keywordPreview = keywords.slice(0, 3);
+  const extraKeywordCount = keywords.length - keywordPreview.length;
+
+  const generateKey = (article, index) =>
+    article._id || article.id || `${article.title || "untitled"}-${index}`;
 
   return (
     <div className="saved-articles">
@@ -26,9 +28,8 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
 
             {keywords.length > 0 && (
               <p className="saved-articles__keywords">
-                By keywords: <strong>{keywords.join(", ")}</strong>
-                {articles.length > keywords.length &&
-                  `, and ${articles.length - keywords.length} other`}
+                By keywords: <strong>{keywordPreview.join(", ")}</strong>
+                {extraKeywordCount > 0 && `, and ${extraKeywordCount} more`}
               </p>
             )}
           </div>
@@ -42,63 +43,76 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
               </p>
             ) : (
               <ul className="saved-articles__list">
-                {articles.map((article) => (
-                  <li key={article._id || article.id} className="saved-articles__item">
-                    <div className="saved-articles__image-container">
-                      <a
-                        href={article.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="saved-articles__link"
-                      >
-                        <img
-                          src={
-                            article.urlToImage ||
-                            "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=500&q=80"
-                          }
-                          alt={article.title}
-                          className="saved-articles__image"
+                {articles.map((article, index) => {
+                  const key = generateKey(article, index);
+                  const imageSrc =
+                    article.urlToImage ||
+                    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=500&q=80";
+                  const altText = article.title || "Saved article image";
+                  const formattedDate = (() => {
+                    try {
+                      return article.date
+                        ? new Date(article.date).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })
+                        : "Date not available";
+                    } catch {
+                      return "Date not available";
+                    }
+                  })();
+
+                  return (
+                    <li key={key} className="saved-articles__item">
+                      <div className="saved-articles__image-container">
+                        <a
+                          href={article.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="saved-articles__link"
+                        >
+                          <img
+                            src={imageSrc}
+                            alt={altText}
+                            className="saved-articles__image"
+                          />
+                          <div className="saved-articles__category">
+                            {article.keyword || "News"}
+                          </div>
+                        </a>
+
+                        <button
+                          type="button"
+                          className="saved-articles__bookmark saved-articles__bookmark--saved"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            onDelete(article._id || article.id);
+                          }}
+                          aria-label="Remove from saved"
                         />
-                        <div className="saved-articles__category">
-                          {article.keyword || "News"}
+                        <div className="saved-articles__remove-text">
+                          Remove from saved
                         </div>
-                      </a>
+                      </div>
 
-                      <button
-                        className="saved-articles__bookmark saved-articles__bookmark--saved"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          onDelete(article._id || article.id);
-                        }}
-                        aria-label="Remove from saved"
-                      />
-                      <div className="saved-articles__remove-text">
-                        Remove from saved
+                      <div className="saved-articles__content">
+                        <div className="saved-articles__date">
+                          {formattedDate}
+                        </div>
+                        <h3 className="saved-articles__headline">
+                          {article.title}
+                        </h3>
+                        <p className="saved-articles__summary">
+                          {article.description || "No description available"}
+                        </p>
+                        <div className="saved-articles__source">
+                          {article.source || "Unknown Source"}
+                        </div>
                       </div>
-                    </div>
-
-                    <div className="saved-articles__content">
-                      <div className="saved-articles__date">
-                        {article.date
-                          ? new Date(article.date).toLocaleDateString("en-US", {
-                              year: "numeric",
-                              month: "long",
-                              day: "numeric",
-                            })
-                          : "Date not available"}
-                      </div>
-                      <h3 className="saved-articles__headline">
-                        {article.title}
-                      </h3>
-                      <p className="saved-articles__summary">
-                        {article.description || "No description available"}
-                      </p>
-                      <div className="saved-articles__source">
-                        {article.source || "Unknown Source"}
-                      </div>
-                    </div>
-                  </li>
-                ))}
+                    </li>
+                  );
+                })}
               </ul>
             )}
           </div>
@@ -109,10 +123,3 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
 }
 
 export default SavedArticles;
-
-
-
-
-
-
-

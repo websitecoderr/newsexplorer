@@ -304,29 +304,39 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  .header {
-    padding: 2px 1rem;
-    border-bottom: none;
-  }
-
   .header__link--active::after {
     display: none;
   }
 
-  .header__hamburger,
-  .header__close {
+  .header__hamburger {
     display: block;
     position: absolute;
-    top: 15px;
+    top: 8px;
     right: 5px;
     z-index: 1002;
+    color: black;
+  }
+
+  .header__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 1003;
   }
 
   .header__container {
@@ -337,7 +347,7 @@
   .header__links,
   .header__nav--logged-in {
     position: fixed;
-    top: -20px;
+    top: -2px;
     left: 0;
     width: 100%;
     height: 39vh;
@@ -352,7 +362,27 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     padding: 1rem 2rem;
-    gap: 1rem;
+    gap: 0.5rem;
+  }
+
+  .header.saved-page .header__link {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0 20px;
+    margin: 20px 0 0 -37px;
+    color: #ffffff;
+    text-decoration: none;
+    width: 288px;
+    height: 56px;
+    top: -2px;
+    left: 0px;
+    opacity: 1;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 56px;
+    letter-spacing: 0px;
+    box-sizing: border-box;
   }
 
   .header.active .header__links,
@@ -363,22 +393,33 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  .header__link {
-    font-size: 18px;
-    color: white;
-    padding: 12px 0;
-    white-space: nowrap;
-    word-spacing: 0.2em;
-    margin: 0;
-    top: 82px;
-    margin-left: 16px;
-    margin-left: 0;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
   .header__link--home {
     align-self: flex-start;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.2s ease;
+    position: relative;
+    margin: 0;
+    top: 55px;
+    left: -30px;
+    z-index: 1;
+    cursor: move;
+  }
+
+  .header__link--menu-open {
+    position: relative;
+    top: 50px;
+    right: 30px;
+    padding-left: 16px;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   .header__link--saved {
@@ -388,18 +429,18 @@
   .header__user-button,
   .signin {
     width: 100%;
-    max-width: 280px;
-    font-size: 18px;
+    max-width: 240px;
+    font-size: 16px;
     text-align: center;
     border: 2px solid white;
     border-radius: 100px;
     color: white;
-    padding: 15px 20px;
+    padding: 12px 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    margin: 88px auto 0 auto;
+    gap: 6px;
+    margin: -28px auto 0 auto;
     box-sizing: border-box;
     background-color: transparent;
     transition: background-color 0.2s ease, outline 0.2s ease;
@@ -415,14 +456,14 @@
   .header__button {
     width: 100%;
     max-width: 280px;
-    padding: 15px 20px;
+    padding: 15px 127px;
     border-radius: 100px;
     border: 1px solid #ffffff;
     background-color: transparent;
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
-    margin: 120px auto 0 auto;
+    margin: 70px auto 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -466,18 +507,6 @@
     box-shadow: inset 0 -1px 0 #ffffff33;
   }
 
-  .header__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 800;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-  }
-
   .header.saved-page {
     padding-bottom: 45px;
     margin-top: 2px;
@@ -490,11 +519,6 @@
   .header.saved-page .header__link--saved:hover,
   .header.saved-page .header__link:hover {
     color: #0077cc;
-  }
-
-  .header.saved-page .signin,
-  .header.saved-page .header__user-button {
-    color: black;
   }
 
   .header__nav-user-group {
@@ -515,19 +539,84 @@
     padding: 12px 24px;
   }
 
+  .header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+  }
+
   .header__title {
     position: relative;
-    width: 117px;
-    height: 24px;
-    top: 16px;
-    left: 16px;
-    opacity: 1;
+    width: auto;
+    height: auto;
+    top: -5px;
+    left: 15px;
     font-family: "Roboto Slab", serif;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
     letter-spacing: 0;
-    vertical-align: middle;
     color: #ffffff;
+    opacity: 1;
+    z-index: 1001;
+    padding: 4px 8px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .header.active .header__title {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1002;
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: none;
+  }
+
+  .header.active .menu-overlay {
+    display: block;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1003;
+  }
+
+  .header.saved-page.active .header__link--saved-home {
+    position: absolute !important;
+    top: 20px !important;
+    left: 40px !important;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 !important;
+  }
+
+  .header.saved-page.active .header__link--saved-articles {
+    position: absolute !important;
+    top: 60px !important;
+    left: 40px !important;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 !important;
   }
 }
