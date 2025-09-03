@@ -351,12 +351,12 @@
     width: 288px;
     height: 68px;
     position: relative;
-    top: -90px;
+    top: -39px;
     left: -30px;
   }
   .saved-articles__breadcrumb {
     position: relative;
-    top: -75px;
+    top: -15px;
     left: -35px;
     width: 288px;
     height: 68px;
@@ -395,7 +395,7 @@
     line-height: 24px;
     letter-spacing: 0;
     position: relative;
-    top: -30px;
+    top: -15px;
     left: -20px;
   }
 }

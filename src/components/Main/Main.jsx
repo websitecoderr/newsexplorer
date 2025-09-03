@@ -3,7 +3,7 @@ import "./Main.css";
 import SearchForm from "../SearchForm/SearchForm";
 import Preloader from "../Preloader/Preloader";
 import NewsResults from "../NewsResults/NewsResults";
-import Image from "../../images/1000132344.jpg";
+import Image from "../../images/about.jpg";
 
 function Main({
   articles,
@@ -58,13 +58,20 @@ function Main({
           <div className="main__about-text">
             <h2 className="main__about-title">About the author</h2>
             <p className="main__about-description">
-              This block describes the project author. Here you should indicate
-              your name, what you do, and which development technologies you
-              know.
+              I'm Alex Falla, a full-stack developer and UI/UX enthusiast. I
+              specialize in building responsive, accessible, and user-friendly
+              web interfaces using technologies like HTML, CSS, JavaScript,
+              React, and Tailwind CSS. I turn complex problems into elegant
+              solutions and continuously learning new tools to improve my craft.
             </p>
             <p className="main__about-description">
-              You can also talk about your experience with TripleTen, what you
-              learned there, and how you can help potential customers.
+              I went through an intensive training program with TripleTen, where
+              I build my skills through real-world projects, agile workflows,
+              and collaborative coding challenges. TripleTen taught me not just
+              how to write clean, scalable code—but how to think like a
+              problem-solver and deliver user-centered solutions.I bring both
+              technical expertise and a deep understanding of user experience to
+              the table.
             </p>
           </div>
         </article>

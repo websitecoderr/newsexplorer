@@ -126,10 +126,9 @@
   }
 
   .footer__icon {
-    width: 20px;
-    transition: opacity 0.3s ease;
     width: 24px;
     height: 24px;
+    transition: opacity 0.3s ease;
     opacity: 1;
   }
 }
@@ -137,7 +136,6 @@
 @media (max-width: 725px) {
   .footer__container {
     display: flex;
-
     gap: 24px;
     width: 100%;
     padding: 16px;

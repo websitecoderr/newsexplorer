@@ -108,6 +108,7 @@
   margin: 0;
   padding: 15px;
   margin-top: 2px;
+  gap: 50px;
 }
 
 .header__link:hover,
@@ -177,11 +178,11 @@
   border-radius: 2px;
 }
 
-.signin {
+.header.saved-page .signin {
   border: 1px solid white;
   padding: 8px 42px;
   border-radius: 20px;
-  margin-left: 1rem;
+  color: black;
 }
 
 .header__user-button {
@@ -664,7 +665,7 @@
     display: block;
   }
 
-    .header__logo::after {
+  .header__logo::after {
     content: "";
     position: absolute;
     left: 0;
