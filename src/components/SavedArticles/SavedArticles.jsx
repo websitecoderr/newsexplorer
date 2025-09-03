@@ -46,7 +46,7 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
                 {articles.map((article, index) => {
                   const key = generateKey(article, index);
                   const imageSrc =
-                    article.urlToImage ||
+                    article.image ||
                     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=500&q=80";
                   const altText = article.title || "Saved article image";
                   const formattedDate = (() => {
@@ -87,7 +87,7 @@ function SavedArticles({ articles = [], onDelete, currentUser }) {
                           className="saved-articles__bookmark saved-articles__bookmark--saved"
                           onClick={(e) => {
                             e.preventDefault();
-                            onDelete(article._id || article.id);
+                            onDelete(article.url);
                           }}
                           aria-label="Remove from saved"
                         />

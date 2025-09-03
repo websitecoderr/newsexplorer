@@ -18,109 +18,20 @@ export const mockTokenValidationResponse = {
   email: mockUser.email,
 };
 
-export const mockArticles = [
-  {
-    title: "Climate Change Threatens Coastal Cities",
-    description:
-      "Rising sea levels are putting millions at risk in low-lying areas.",
-    url: "https://example.com/article1",
-    urlToImage: "https://source.unsplash.com/featured/?climate",
-    publishedAt: "2024-07-01T10:00:00Z",
-    source: { name: "BBC News" },
-  },
-  {
-    title: "Global Economy Faces Uncertainty",
-    description: "Markets react to inflation and geopolitical tensions.",
-    url: "https://example.com/article2",
-    urlToImage: "https://source.unsplash.com/featured/?economy",
-    publishedAt: "2024-07-02T08:30:00Z",
-    source: { name: "Reuters" },
-  },
-  {
-    title: "AI Revolutionizes Healthcare Diagnostics",
-    description:
-      "Machine learning tools are improving early disease detection.",
-    url: "https://example.com/article3",
-    urlToImage: "https://source.unsplash.com/featured/?healthcare",
-    publishedAt: "2024-07-03T14:45:00Z",
-    source: { name: "The Verge" },
-  },
-  {
-    title: "SpaceX Launches New Satellite Fleet",
-    description: "The latest mission expands global internet coverage.",
-    url: "https://example.com/article4",
-    urlToImage: "https://source.unsplash.com/featured/?space",
-    publishedAt: "2024-07-04T12:00:00Z",
-    source: { name: "NASA" },
-  },
-  {
-    title: "Renewable Energy Surpasses Fossil Fuels",
-    description: "Solar and wind power lead the global energy transition.",
-    url: "https://example.com/article5",
-    urlToImage: "https://source.unsplash.com/featured/?renewable",
-    publishedAt: "2024-07-05T09:15:00Z",
-    source: { name: "National Geographic" },
-  },
-  {
-    title: "Breakthrough in Quantum Computing",
-    description: "Researchers achieve stable qubit entanglement at scale.",
-    url: "https://example.com/article6",
-    urlToImage: "https://source.unsplash.com/featured/?quantum",
-    publishedAt: "2024-07-06T16:20:00Z",
-    source: { name: "MIT Tech Review" },
-  },
-];
-
 export const mockSavedArticles = [
   {
-    title: "Climate Change Threatens Coastal Cities",
+    source: "MacRumors",
+    author: "Hartley Charlton",
+    title: "Apple TV+ Reportedly Abandoning MLB Coverage",
     description:
-      "Rising sea levels are putting millions at risk in low-lying areas.",
-    url: "https://example.com/article1",
-    image: "https://source.unsplash.com/featured/?climate",
-    date: "2024-07-01",
-    source: "BBC News",
-    keyword: "Climate",
-  },
-  {
-    title: "AI Revolutionizes Healthcare Diagnostics",
-    description:
-      "Machine learning tools are improving early disease detection.",
-    url: "https://example.com/article3",
-    image: "https://source.unsplash.com/featured/?healthcare",
-    date: "2024-07-03",
-    source: "The Verge",
-    keyword: "Health",
-  },
-  {
-    title: "AI Revolutionizes Healthcare Diagnostics",
-    description:
-      "Machine learning tools are improving early disease detection.",
-    url: "https://example.com/article3",
-    image: "https://source.unsplash.com/featured/?healthcare",
-    date: "2024-07-03",
-    source: "The Verge",
-    keyword: "Health",
-  },
-  {
-    title: "AI Revolutionizes Healthcare Diagnostics",
-    description:
-      "Machine learning tools are improving early disease detection.",
-    url: "https://example.com/article3",
-    image: "https://source.unsplash.com/featured/?healthcare",
-    date: "2024-07-03",
-    source: "The Verge",
-    keyword: "Health",
-  },
-  {
-    title: "AI Revolutionizes Healthcare Diagnostics",
-    description:
-      "Machine learning tools are improving early disease detection.",
-    url: "https://example.com/article3",
-    image: "https://source.unsplash.com/featured/?healthcare",
-    date: "2024-07-03",
-    source: "The Verge",
-    keyword: "Health",
+      'Apple is apparently set to exit its partnership with Major League Baseball and discontinue its "Friday Night Baseball" package on Apple TV+.\n\n\n\n\n\nApple first entered Major League Baseball in March 2022 with a seven-year agreement valued at roughly $85 million…',
+    url: "https://www.macrumors.com/2025/08/20/apple-tv-reportedly-abandoning-mlb-coverage/",
+    image:
+      "https://images.macrumors.com/t/85lIihM07VCr-nMGV8O-6eOBkgs=/1600x/article-new/2022/03/Apple-TV-plus-MLB-Friday-Night-Baseball-hero_big.jpg.medium_2x.jpg",
+    date: "2025-08-20T12:33:45Z",
+    keyword: "sports",
+    content:
+      'Apple is apparently set to exit its partnership with Major League Baseball and discontinue its "Friday Night Baseball" package on Apple TV+.\r\nApple first entered Major League Baseball in March 2022 w… [+2206 chars]',
   },
 ];
 

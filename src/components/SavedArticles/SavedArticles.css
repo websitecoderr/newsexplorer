@@ -270,7 +270,7 @@
 
   .saved-articles__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, 300px);
     gap: 1.5rem;
     padding: 0 16px;
     box-sizing: border-box;
@@ -331,7 +331,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 725px) {
   .saved-articles__title,
   .saved-articles__keywords,
   .saved-articles__breadcrumb,

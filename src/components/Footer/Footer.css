@@ -70,25 +70,25 @@
   .footer__container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-direction: column-reverse;
+    align-items: flex-start;
     flex-wrap: nowrap;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .footer__left {
     font-size: 14px;
     line-height: 20px;
     color: var(--color-text-secondary, #6b6b6b);
-    max-width: 60%;
-    white-space: nowrap;
-    margin-left: 25px;
   }
 
   .footer__right {
     display: flex;
-    align-items: center;
-    gap: 24px;
+    align-items: flex-start;
     flex-shrink: 0;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .footer__nav {
@@ -97,14 +97,10 @@
   }
 
   .footer__link {
-    width: 49px;
-    height: 24px;
     opacity: 1;
     font-family: Roboto, sans-serif;
     font-weight: 400;
     font-size: 18px;
-    line-height: 24px;
-    text-align: center;
     color: #1a1b22;
   }
 
@@ -138,11 +134,10 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 725px) {
   .footer__container {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-start;
+
     gap: 24px;
     width: 100%;
     padding: 16px;
@@ -156,21 +151,16 @@
 
   .footer__link {
     font-size: 18px;
-    line-height: 48px;
     color: #1a1b22;
     text-decoration: none;
     padding: 4px 0;
-    width: 200px;
-    height: 21px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    margin-left: -72px;
   }
 
   .footer__social {
     display: flex;
     gap: 0px;
-    margin-top: -70px;
   }
 
   .footer__icon-wrapper {
@@ -191,8 +181,6 @@
 
   .footer__copyright {
     color: var(--color-text-secondary, #6b6b6b);
-    max-width: 250px;
-    width: 288px;
     height: 22px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -202,19 +190,13 @@
 
   .footer__right {
     display: flex;
-    align-items: center;
-    gap: 110px;
     flex-shrink: 0;
   }
 
   .footer__link--tripleten {
-    margin-left: -60px;
-    width: 200px;
-    height: 74px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    line-height: 48px;
     color: black;
   }
 }

@@ -29,6 +29,7 @@ function App() {
   const [loginError, setLoginError] = useState("");
   const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
+  const [currentSearchKeyword, setCurrentSearchKeyword] = useState("");
 
   useEffect(() => {
     checkToken()
@@ -106,6 +107,7 @@ function App() {
         setError("Nothing Found");
       } else {
         setArticles(articlesData);
+        setCurrentSearchKeyword(query);
         setVisibleCards(3);
       }
     } catch (err) {
@@ -123,12 +125,14 @@ function App() {
   };
 
   const handleSaveArticle = (article) => {
+    const enrichedArticle = { ...article, keyword: currentSearchKeyword };
+
     const isAlreadySaved = savedArticles.some(
-      (saved) => saved.url === article.url
+      (saved) => saved.url === enrichedArticle.url
     );
 
     if (!isAlreadySaved) {
-      setSavedArticles((prev) => [...prev, article]);
+      setSavedArticles((prev) => [...prev, enrichedArticle]);
     }
   };
 
@@ -180,8 +184,10 @@ function App() {
             element={
               <SavedArticles
                 articles={savedArticles}
-                onDelete={(index) =>
-                  setSavedArticles(savedArticles.filter((_, i) => i !== index))
+                onDelete={(url) =>
+                  setSavedArticles(
+                    savedArticles.filter((article) => article.url !== url)
+                  )
                 }
                 currentUser={currentUser}
                 onHomeClick={() => {}}
