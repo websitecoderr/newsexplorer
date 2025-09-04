@@ -241,12 +241,12 @@
     line-height: 34px;
     letter-spacing: 0;
     color: #333;
-    width: 500px;
-    height: 68px;
+    max-width: 100%;
+    height: auto;
     opacity: 1;
     padding: 0 20px;
     box-sizing: border-box;
-    margin-left: -155px;
+    margin-left: 0;
   }
 
   .saved-articles__keywords {
@@ -260,7 +260,7 @@
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 5px;
-    margin-left: -150px;
+    margin-left: 0;
   }
 
   .saved-articles__keywords strong {
@@ -318,8 +318,8 @@
 
   .saved-articles__breadcrumb {
     max-width: 100%;
-    width: calc(100% - 56px);
-    height: 24px;
+    width: 100%;
+    height: auto;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -327,7 +327,7 @@
     letter-spacing: 0;
     color: rgba(26, 27, 34, 0.5);
     opacity: 1;
-    margin-left: -158px;
+    margin-left: 0;
   }
 }
 
@@ -348,24 +348,23 @@
     line-height: 34px;
     letter-spacing: 0;
     text-align: left;
-    width: 288px;
-    height: 68px;
-    position: relative;
-    top: -39px;
-    left: -30px;
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 0;
   }
+
   .saved-articles__breadcrumb {
-    position: relative;
-    top: -15px;
-    left: -35px;
-    width: 288px;
-    height: 68px;
-    font-family: "Roboto Slab", serif;
+    position: static;
+    width: 100%;
+    height: auto;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-size: 30px;
-    line-height: 34px;
+    font-size: 14px;
+    line-height: 24px;
     letter-spacing: 0;
     text-align: left;
+    margin-bottom: 16px;
   }
 
   .saved-articles__container {
@@ -383,19 +382,19 @@
     flex-direction: column;
     gap: 24px;
   }
+
   .saved-articles__keywords {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    width: 288px;
-    height: 48px;
+    width: 100%;
+    height: auto;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;
     letter-spacing: 0;
-    position: relative;
-    top: -15px;
-    left: -20px;
+    position: static;
+    margin-bottom: 16px;
   }
 }
