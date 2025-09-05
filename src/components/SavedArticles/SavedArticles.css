@@ -6,7 +6,7 @@
 }
 
 .saved-articles__intro-section {
-  padding-left: 24px;
+  margin-left: -50px;
   margin-bottom: 88px;
   max-width: 800px;
   padding-top: 40px;
@@ -39,7 +39,7 @@
   padding: 0 20px;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: -155px;
+  margin-left: 0px;
 }
 
 .saved-articles__breadcrumb {
